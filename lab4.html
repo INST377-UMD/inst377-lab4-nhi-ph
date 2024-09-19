@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title> Lab 4 </title>
+        <link rel="stylesheet" href="lab4.css">
+    </head>
+
+    <body style="background-color: lavender;">
+        <h1 id="heading"> INST377 - Lab 4 </h1>
+
+        <div class="container">
+         <!-- Section 1 -->
+         <div class="section">
+            <form name="alertForm" onsubmit="return(alertMe(name))">
+                <label> Name: </label>
+                <input type="text" id="name" required>
+                <input type="submit" value="Alert Me!">
+            </form>
+         </div>
+
+         <script type="text/javascript">
+            function alertMe() {
+                alert('Hi ' + document.getElementById('name').value + '!');
+            }
+         </script>
+
+         <!-- Section 2 -->
+         <div class="section">
+            <button onclick="changeColor()"> Change Color </button>
+         </div>
+
+         <script type="text/javascript">
+            function changeColor() {
+                if(document.body.style.backgroundColor == 'lavender') {
+                    document.body.style.backgroundColor = 'cornsilk';
+                } else {
+                    document.body.style.backgroundColor = 'lavender';
+                }
+            }
+         </script>
+
+        <!-- Section 3 -->
+         <div class="section" onsubmit="return(formValidation())">
+            <form name="validateForm">
+                <label> Text Tester: </label>
+                <input type="text" id="inputText">
+                <input type="submit" value="Validate Text">
+            </form>
+         </div>
+
+         <script type="text/javascript">
+            function formValidation() {
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validation.test(document.validateForm.inputText.value)) {
+                    alert('How about...nah');
+                }
+            }
+         </script>
+
+        <!-- Section 4 -->
+         <div class="section">
+            <button onclick="addText()"> Add Text </button>
+         </div>
+
+         <script type="text/javascript">
+            function addText() {
+                document.getElementById('heading').textContent += ' - Adding Text';
+            }
+         </script>
+        </div>
+    </body>
+</html>
